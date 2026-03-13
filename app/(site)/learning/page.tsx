@@ -4,6 +4,8 @@ import InstructorSection from "@/components/InstructorSection";
 import JourneySection from "@/components/JourneySection";
 import ToolsSection from "@/components/ToolsSection";
 import FAQSection from "@/components/FAQSection";
+import CertificateSection from "@/components/CertificateSection";
+import OutcomeSection from "@/components/OutcomeSection";
 import CTAButton from "@/components/CTAButton";
 import type { Metadata } from "next";
 
@@ -18,6 +20,7 @@ export default function LearningPage() {
     <>
       <Hero
         badge="AI Education"
+        backgroundVideo="/video/learning_video.mp4"
         headline={
           <>
             Gen AI Systems{" "}
@@ -80,8 +83,10 @@ export default function LearningPage() {
 
       <JourneySection />
       <CurriculumSection />
+      <OutcomeSection />
       <ToolsSection />
       <InstructorSection />
+      <CertificateSection />
 
       <FAQSection />
     </>

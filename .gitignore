@@ -28,6 +28,12 @@ yarn-error.log*
 # Vercel
 .vercel
 
+# Claude Code
+.claude/
+
+# Large assets
+public/pdf/
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts

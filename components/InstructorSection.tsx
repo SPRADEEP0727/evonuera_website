@@ -20,7 +20,8 @@ export default function InstructorSection() {
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl gradient-border overflow-hidden relative">
+        <div className="max-w-7xl mx-auto rounded-3xl gradient-border relative p-[2px]">
+        <div className="bg-white rounded-3xl overflow-hidden relative">
           {/* Grid background */}
           <div
             className="absolute inset-0 opacity-[0.06]"
@@ -32,19 +33,8 @@ export default function InstructorSection() {
           />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Photo side */}
-            <div className="relative min-h-[320px] lg:min-h-[480px] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-              {/* Replace src with your actual photo path e.g. /pradeep.jpg */}
-              <Image
-                src="/mentor.jpg"
-                alt="Pradeep Subramanian"
-                fill
-                className="object-cover object-center"
-              />
-            </div>
-
             {/* Content side */}
-            <div className="p-10 sm:p-14 flex flex-col justify-center">
+            <div className="p-10 sm:p-14 flex flex-col justify-center order-2 lg:order-1">
               <h3 className="text-3xl font-extrabold text-gray-900 mb-2">
                 Pradeep Subramanian
               </h3>
@@ -68,7 +58,18 @@ export default function InstructorSection() {
                 ))}
               </ul>
             </div>
+
+            {/* Photo side */}
+            <div className="relative min-h-[360px] lg:min-h-[560px] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center order-1 lg:order-2">
+              <Image
+                src="/pradeep.png"
+                alt="Pradeep Subramanian"
+                fill
+                className="object-cover object-top"
+              />
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

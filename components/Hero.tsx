@@ -7,6 +7,7 @@ interface HeroProps {
   secondaryCTA?: { label: string; href: string };
   badge?: string;
   backgroundImage?: string;
+  backgroundVideo?: string;
 }
 
 export default function Hero({
@@ -16,16 +17,32 @@ export default function Hero({
   secondaryCTA,
   badge,
   backgroundImage,
+  backgroundVideo,
 }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      {/* Background video */}
+      {backgroundVideo && (
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-brand-bg/60" />
+        </div>
+      )}
+
       {/* Background image */}
-      {backgroundImage && (
+      {backgroundImage && !backgroundVideo && (
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-          {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-brand-bg/75" />
         </div>
       )}
@@ -46,11 +63,11 @@ export default function Hero({
           </div>
         )}
 
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight text-white mb-8 animate-fade-in-up delay-100">
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.15)] mb-8 animate-fade-in-up delay-100">
           {headline}
         </h1>
 
-        <p className="text-lg sm:text-xl text-brand-muted leading-relaxed max-w-2xl mx-auto mb-12 animate-fade-in-up delay-200">
+        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-12 animate-fade-in-up delay-200">
           {subheadline}
         </p>
 
