@@ -33,7 +33,7 @@ export default function Hero({
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-brand-bg/60" />
+          <div className="absolute inset-0 bg-brand-bg/80" />
         </div>
       )}
 

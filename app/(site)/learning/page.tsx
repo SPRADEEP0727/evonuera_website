@@ -31,8 +31,14 @@ export default function LearningPage() {
         primaryCTA={{ label: "Start Your AI Journey", href: "/ai-architect" }}
       />
 
+      {/* Divider between hero and content */}
+      <div className="relative">
+        <div className="divider-gradient" />
+        <div className="h-px bg-white/10" />
+      </div>
+
       {/* Program stats */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
             { value: "8", label: "Weeks" },
@@ -52,8 +58,8 @@ export default function LearningPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
-              Designed for Every Background
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+              Designed for <span className="gradient-text">Every Background</span>
             </h2>
             <p className="text-brand-muted">This program is designed for you — even if you&apos;ve never written AI code.</p>
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Evonuera – AI Systems Company",
@@ -54,6 +55,7 @@ export default function RootLayout({
           </noscript>
         )}
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
