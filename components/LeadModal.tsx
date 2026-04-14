@@ -32,8 +32,16 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
       lead_email: form.email,
     });
 
-    // TODO: connect to your CRM / email service here
-    await new Promise((r) => setTimeout(r, 400));
+    try {
+      await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch (err) {
+      console.error("Lead submission failed:", err);
+    }
+
     router.push("/masterclass");
   };
 

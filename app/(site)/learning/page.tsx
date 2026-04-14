@@ -92,6 +92,86 @@ export default function LearningPage() {
       <OutcomeSection />
       <ToolsSection />
       <InstructorSection />
+
+      {/* Webinars & Workshops */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-3">
+              Webinars &amp; <span className="gradient-text">Workshops</span>
+            </h2>
+            <p className="text-brand-muted max-w-2xl mx-auto">
+              Live sessions, hands-on workshops, and expert-led webinars to
+              keep you at the cutting edge of AI.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* VIT Workshop — completed */}
+            <div className="card overflow-hidden group">
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src="/1775625273696.jfif"
+                  alt="Workshop at VIT"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="absolute top-3 left-3 bg-brand-primary/90 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  Workshop
+                </span>
+              </div>
+              <div className="p-5">
+                <p className="text-brand-muted text-xs mb-2">VIT University</p>
+                <h3 className="text-white font-semibold text-lg leading-snug">
+                  Building AI Agents &ndash; Live Workshop
+                </h3>
+              </div>
+            </div>
+
+            {/* Upcoming cards */}
+            {[
+              {
+                title: "Prompt Engineering Masterclass",
+                tag: "Webinar",
+              },
+              {
+                title: "AI MicroSaaS Launch Blueprint",
+                tag: "Workshop",
+              },
+            ].map((item) => (
+              <div key={item.title} className="card overflow-hidden group relative">
+                <div className="relative h-48 overflow-hidden bg-white/[0.03] flex items-center justify-center">
+                  <div className="text-center">
+                    <svg
+                      className="mx-auto mb-2 h-10 w-10 text-brand-muted/50"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                    <p className="text-brand-muted/60 text-sm font-medium">Coming Soon</p>
+                  </div>
+                  <span className="absolute top-3 left-3 bg-white/10 text-brand-muted text-xs font-semibold px-3 py-1 rounded-full">
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="p-5">
+                  <p className="text-brand-secondary text-xs font-medium mb-2">Upcoming</p>
+                  <h3 className="text-white font-semibold text-lg leading-snug">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <CertificateSection />
 
       <FAQSection />
