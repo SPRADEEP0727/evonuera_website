@@ -28,15 +28,6 @@ const highlights = [
       </svg>
     ),
   },
-  {
-    label: "Tech Lead",
-    detail: "at Bosch Global Software",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7Z" />
-      </svg>
-    ),
-  },
 ];
 
 export default function InstructorSection() {
@@ -89,9 +80,6 @@ export default function InstructorSection() {
                     <br />
                     <span className="gradient-text">Subramanian</span>
                   </h3>
-                  <p className="text-white/70 text-sm mt-2">
-                    Tech Lead – Bosch Global Software Technologies
-                  </p>
                 </div>
               </div>
 
@@ -104,10 +92,12 @@ export default function InstructorSection() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {highlights.map((item) => (
+                  {highlights.map((item, i) => (
                     <div
                       key={item.label}
-                      className="card p-5 group hover:border-brand-primary/40"
+                      className={`card p-5 group hover:border-brand-primary/40 ${
+                        i === highlights.length - 1 ? "sm:col-span-2" : ""
+                      }`}
                     >
                       <span className="w-10 h-10 rounded-xl mb-3 flex items-center justify-center bg-gradient-to-br from-brand-primary/20 to-brand-secondary/15 border border-brand-primary/25 text-brand-secondary group-hover:from-brand-primary/30 group-hover:to-brand-secondary/25 transition-all duration-300">
                         {item.icon}
