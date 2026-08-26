@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const highlights = [
   {
-    label: "7+ years",
+    label: "8+ years",
     detail: "in software engineering",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.6}>
@@ -80,13 +80,16 @@ export default function InstructorSection() {
                     <br />
                     <span className="gradient-text">Subramanian</span>
                   </h3>
+                  <p className="text-white/75 text-sm sm:text-base font-medium mt-3">
+                    AI Systems Architect &middot; Trainer
+                  </p>
                 </div>
               </div>
 
               {/* Highlights */}
               <div className="p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
                 <p className="text-brand-muted text-base sm:text-lg leading-relaxed mb-8">
-                  Seven years of shipping software, and production AI systems
+                  Eight years of shipping software, and production AI systems
                   built at real-world scale — the same systems, patterns, and
                   hard-won lessons are what you learn to build in the program.
                 </p>
