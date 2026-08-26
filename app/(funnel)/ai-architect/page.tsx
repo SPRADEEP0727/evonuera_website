@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import VideoThumbnail from "@/components/VideoThumbnail";
+import CurrentYear from "@/components/CurrentYear";
 import LeadModal from "@/components/LeadModal";
 
 declare global {
@@ -121,7 +122,7 @@ export default function AIArchitectPage() {
       {/* Trust footer */}
       <footer className="py-6 px-4 text-center border-t border-white/5 relative z-10">
         <p className="text-brand-dim text-xs">
-          © 2025 Evonuera. All rights reserved.
+          © <CurrentYear fallback={new Date().getFullYear()} /> Evonuera. All rights reserved.
         </p>
       </footer>
 

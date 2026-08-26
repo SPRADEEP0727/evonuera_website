@@ -1,4 +1,5 @@
 import CurriculumSection from "@/components/CurriculumSection";
+import CurrentYear from "@/components/CurrentYear";
 import InstructorSection from "@/components/InstructorSection";
 import CalendlySection from "@/components/CalendlySection";
 import type { Metadata } from "next";
@@ -131,7 +132,7 @@ export default function MasterclassPage() {
       {/* Footer */}
       <footer className="py-8 px-4 text-center border-t border-white/5">
         <p className="text-brand-muted text-xs">
-          © 2025 Evonuera. All rights reserved.
+          © <CurrentYear fallback={new Date().getFullYear()} /> Evonuera. All rights reserved.
         </p>
       </footer>
     </main>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import CurrentYear from "@/components/CurrentYear";
 
 export default function Footer() {
   return (
@@ -71,7 +72,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-brand-dim text-sm sm:text-base text-center sm:text-left">
-            © 2025 Evonuera. All rights reserved.
+            © <CurrentYear fallback={new Date().getFullYear()} /> Evonuera. All rights reserved.
           </p>
           <p className="text-brand-dim text-sm sm:text-base text-center sm:text-right">
             Built by{" "}
