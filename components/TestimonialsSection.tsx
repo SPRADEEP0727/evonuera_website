@@ -2,23 +2,25 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
+const YT_ORIGIN = "https://www.youtube-nocookie.com";
+
 const testimonials = [
   {
     name: "Shreeja",
     role: "Gen AI Systems Architect Program",
-    src: "/video/Testimonials/Testiminial_Shreeja.mp4",
+    youtubeId: "MIsyjDFcj2k",
   },
   {
-    name: "Sudhar",
+    name: "Sudharshan",
     role: "Gen AI Systems Architect Program",
-    src: "/video/Testimonials/Testiminial_sudhar.mp4",
+    youtubeId: "uN3hLvcYA-0",
   },
 ];
 
 export default function TestimonialsSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const frameRefs = useRef<(HTMLIFrameElement | null)[]>([]);
   const [active, setActive] = useState(0);
 
   // Track which slide is centered while the user swipes/scrolls
@@ -52,10 +54,14 @@ export default function TestimonialsSection() {
     };
   }, []);
 
-  // Pause any video that is no longer the active slide
+  // Pause any player the user has swiped away from
   useEffect(() => {
-    videoRefs.current.forEach((video, i) => {
-      if (video && i !== active) video.pause();
+    frameRefs.current.forEach((frame, i) => {
+      if (!frame?.contentWindow || i === active) return;
+      frame.contentWindow.postMessage(
+        JSON.stringify({ event: "command", func: "pauseVideo", args: [] }),
+        YT_ORIGIN
+      );
     });
   }, [active]);
 
@@ -134,16 +140,17 @@ export default function TestimonialsSection() {
                       isActive ? "glow-primary" : ""
                     }`}
                   >
-                    <div className="rounded-2xl overflow-hidden bg-black">
-                      <video
+                    <div className="rounded-2xl overflow-hidden bg-black aspect-[9/16]">
+                      <iframe
                         ref={(el) => {
-                          videoRefs.current[i] = el;
+                          frameRefs.current[i] = el;
                         }}
-                        src={t.src}
-                        controls
-                        preload="metadata"
-                        playsInline
-                        className="w-full aspect-[9/16] object-cover block"
+                        src={`${YT_ORIGIN}/embed/${t.youtubeId}?enablejsapi=1&rel=0&modestbranding=1&playsinline=1`}
+                        title={`${t.name} — video testimonial`}
+                        className="w-full h-full block"
+                        loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
                       />
                     </div>
                     <figcaption className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-4 px-1">
