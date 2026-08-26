@@ -34,8 +34,8 @@ export default function InstructorSection() {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* Content side */}
-            <div className="p-10 sm:p-14 flex flex-col justify-center order-2 lg:order-1">
-              <h3 className="text-3xl font-extrabold text-gray-900 mb-2">
+            <div className="p-6 sm:p-10 lg:p-14 flex flex-col justify-center order-2 lg:order-1">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">
                 Pradeep Subramanian
               </h3>
               <p className="text-brand-secondary text-base font-semibold mb-1">
@@ -65,7 +65,7 @@ export default function InstructorSection() {
                 src="/pradeep.png"
                 alt="Pradeep Subramanian"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[50%_38%]"
               />
             </div>
           </div>

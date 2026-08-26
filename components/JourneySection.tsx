@@ -118,10 +118,10 @@ export default function JourneySection() {
         {/* Timeline */}
         <div className="relative" ref={timelineRef}>
           {/* Center vertical line — background track */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/10" />
+          <div className="absolute left-5 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/10" />
           {/* Center vertical line — animated fill */}
           <div
-            className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-gradient-to-b from-brand-primary via-brand-secondary to-brand-primary origin-top"
+            className="absolute left-5 md:left-1/2 -translate-x-1/2 top-0 w-[2px] bg-gradient-to-b from-brand-primary via-brand-secondary to-brand-primary origin-top"
             style={{ height: `${lineProgress * 100}%` }}
           />
 
@@ -133,7 +133,7 @@ export default function JourneySection() {
                 <div
                   key={phase.number}
                   ref={(el) => { cardRefs.current[i] = el; }}
-                  className={`relative flex items-center transition-all duration-700 ease-out ${
+                  className={`relative flex flex-col md:flex-row items-stretch md:items-center transition-all duration-700 ease-out ${
                     visibleCards[i]
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-12"
@@ -143,14 +143,14 @@ export default function JourneySection() {
                   }}
                 >
                   {/* Center dot on the line */}
-                  <div className="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white text-sm font-extrabold shadow-lg z-10">
+                  <div className="absolute left-5 md:left-1/2 top-0 md:top-auto -translate-x-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center text-white text-xs md:text-sm font-extrabold shadow-lg z-10">
                     {phase.number}
                   </div>
 
                   {/* Left side */}
-                  <div className="w-[calc(50%-2rem)]">
+                  <div className="w-full pl-14 md:pl-0 md:w-[calc(50%-2rem)]">
                     {isLeft && (
-                      <div className="card p-7 group hover:border-brand-primary/40 mr-4">
+                      <div className="card p-5 sm:p-7 group hover:border-brand-primary/40 md:mr-4">
                         <div className="flex items-center gap-3 mb-3">
                           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary/15 to-brand-secondary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary shrink-0 group-hover:from-brand-primary/25 group-hover:to-brand-secondary/15 transition-all duration-300">
                             {phase.icon}
@@ -163,12 +163,12 @@ export default function JourneySection() {
                   </div>
 
                   {/* Spacer for center */}
-                  <div className="w-16 shrink-0" />
+                  <div className="hidden md:block w-16 shrink-0" />
 
                   {/* Right side */}
-                  <div className="w-[calc(50%-2rem)]">
+                  <div className="w-full pl-14 md:pl-0 md:w-[calc(50%-2rem)]">
                     {!isLeft && (
-                      <div className="card p-7 group hover:border-brand-primary/40 ml-4">
+                      <div className="card p-5 sm:p-7 group hover:border-brand-primary/40 md:ml-4">
                         <div className="flex items-center gap-3 mb-3">
                           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary/15 to-brand-secondary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary shrink-0 group-hover:from-brand-primary/25 group-hover:to-brand-secondary/15 transition-all duration-300">
                             {phase.icon}

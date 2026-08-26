@@ -86,7 +86,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                 placeholder={field.placeholder}
                 value={form[field.key]}
                 onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-white/25 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 transition-all text-sm"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-white/25 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 transition-all text-base sm:text-sm"
               />
             </div>
           ))}

@@ -25,10 +25,10 @@ export default function VideoThumbnail({
           />
         ) : (
           /* Placeholder thumbnail */
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
-            <div className="text-center mb-4">
-              <p className="text-brand-muted text-sm uppercase tracking-widest mb-2">Free Masterclass</p>
-              <h3 className="text-white text-2xl font-bold leading-tight">
+          <div className="absolute inset-0 flex flex-col items-center justify-between p-5 sm:p-8">
+            <div className="text-center">
+              <p className="text-brand-muted text-[11px] sm:text-sm uppercase tracking-widest mb-1 sm:mb-2">Free Masterclass</p>
+              <h3 className="text-white text-lg sm:text-2xl font-bold leading-tight">
                 How to Build Real AI Systems
               </h3>
             </div>
@@ -42,13 +42,13 @@ export default function VideoThumbnail({
                 />
               ))}
             </div>
-            <p className="text-brand-muted text-sm mt-2">7-minute masterclass</p>
+            <p className="text-brand-muted text-[11px] sm:text-sm">7-minute masterclass</p>
           </div>
         )}
 
         {/* Play button overlay */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-xl">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-xl">
             <svg
               className="w-6 h-6 text-brand-primary ml-1"
               fill="currentColor"

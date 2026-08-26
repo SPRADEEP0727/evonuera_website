@@ -37,3 +37,6 @@ public/pdf/
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Large media (host externally, not in git)
+/public/video/Testimonials/

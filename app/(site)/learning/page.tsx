@@ -5,6 +5,7 @@ import JourneySection from "@/components/JourneySection";
 import ToolsSection from "@/components/ToolsSection";
 import FAQSection from "@/components/FAQSection";
 import CertificateSection from "@/components/CertificateSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import OutcomeSection from "@/components/OutcomeSection";
 import CTAButton from "@/components/CTAButton";
 import type { Metadata } from "next";
@@ -173,6 +174,8 @@ export default function LearningPage() {
       </section>
 
       <CertificateSection />
+
+      <TestimonialsSection />
 
       <FAQSection />
     </>

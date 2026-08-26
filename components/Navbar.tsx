@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const navLinks = [
@@ -14,6 +15,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -48,16 +50,23 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-base font-bold text-white/85 hover:text-white transition-colors duration-200 relative group"
-              >
-                {link.label}
-                <span className="absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-brand-primary to-brand-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-base font-bold transition-colors duration-200 relative group ${
+                    isActive ? "text-white" : "text-white/85 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                  <span className={`absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-brand-primary to-brand-secondary transition-transform duration-300 ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`} />
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Desktop CTA */}
@@ -72,16 +81,16 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2.5 -mr-2.5 flex items-center justify-center"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
             {open ? (
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -91,17 +100,22 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-brand-bg/95 backdrop-blur-xl border-t border-white/5 px-4 py-6 flex flex-col gap-4 animate-fade-in">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-brand-muted hover:text-white transition-colors py-2 text-lg"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="md:hidden bg-brand-bg/95 backdrop-blur-xl border-t border-white/5 px-4 py-6 flex flex-col gap-4 animate-fade-in max-h-[calc(100vh-5rem)] overflow-y-auto">
+          {navLinks.map((link) => {
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`transition-colors py-2.5 text-lg ${
+                  isActive ? "text-white font-semibold" : "text-brand-muted hover:text-white"
+                }`}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href="/ai-architect"
             className="bg-brand-primary text-white text-sm font-semibold px-5 py-3 rounded-xl text-center mt-2"

@@ -288,3 +288,16 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(140,82,255,0.3), rgba(255,87,87,0.3), transparent);
 }
+
+/* ═══════════════════════════════════════
+   CAROUSEL / SWIPE TRACK
+   ═══════════════════════════════════════ */
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -70,7 +70,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-brand-secondary/8 rounded-full blur-[120px]" />

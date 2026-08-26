@@ -30,9 +30,9 @@ export default function ProductsPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-3">
                 <h2 className="text-2xl font-bold text-white">AI Fitness App</h2>
-                <span className="bg-brand-secondary/10 text-brand-secondary text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="bg-brand-secondary/10 text-brand-secondary text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap">
                   Coming Soon
                 </span>
               </div>
