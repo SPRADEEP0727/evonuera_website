@@ -10,6 +10,7 @@ interface CTAButtonProps {
   children: React.ReactNode;
   className?: string;
   type?: "button" | "submit";
+  download?: boolean | string;
 }
 
 export default function CTAButton({
@@ -20,6 +21,7 @@ export default function CTAButton({
   children,
   className = "",
   type = "button",
+  download,
 }: CTAButtonProps) {
   const base =
     "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-bg btn-premium";
@@ -43,7 +45,7 @@ export default function CTAButton({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} download={download}>
         {children}
       </Link>
     );

@@ -32,7 +32,8 @@ yarn-error.log*
 .claude/
 
 # Large assets
-public/pdf/
+public/pdf/*
+!public/pdf/course-brochure.pdf
 
 # TypeScript
 *.tsbuildinfo
