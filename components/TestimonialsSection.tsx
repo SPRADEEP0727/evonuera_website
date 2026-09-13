@@ -15,6 +15,11 @@ const testimonials = [
     role: "Gen AI Systems Architect Program",
     youtubeId: "uN3hLvcYA-0",
   },
+  {
+    name: "Sathish",
+    role: "Gen AI Systems Architect Program",
+    youtubeId: "0qlipuSn4HQ",
+  },
 ];
 
 export default function TestimonialsSection() {
